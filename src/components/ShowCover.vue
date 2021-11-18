@@ -15,7 +15,7 @@
 
         <!-- Avg -->
         <div
-            :class="'border-' + avgColor() + '-500 text-' + avgColor() + '-500'"
+            :class="avgColor()"
             class="bg-gray-900 border-3 font-semibold text-sm flex justify-center items-center w-11 h-11 lg:w-12 lg:h-12 shadow-xl rounded-full absolute left-2 top-2">
                 {{ avg() }} <small>%</small>
         </div>
@@ -37,13 +37,13 @@ export default {
 		},
 		avgColor() {
 			if (this.avg(this.show) >= 70 && this.avg(this.show) <= 100) {
-				return 'c-green';
+				return 'border-c-green-500 text-c-green-500';
 			} else if (this.avg(this.show) >= 51 && this.avg(this.show) <= 69) {
-				return 'yellow'
+				return 'border-yellow-500 text-yellow-500';
 			} else if (this.avg(this.show) <= 50 && this.avg(this.show) >= 1) {
-				return 'red'
+				return 'border-red-500 text-red-500';
 			} else if (this.avg(this.show) == 0) {
-				return 'gray'
+				return 'border-gray-500 text-gray-500';
 			}
 		},
         image(path) {
